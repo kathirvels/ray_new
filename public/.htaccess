@@ -1,6 +1,12 @@
+# Serve the static home page even while the old index.php still exists on
+# the host (we deploy over the old PHP site without deleting its files).
+DirectoryIndex index.html index.php
+
 # Preserve SEO: 301-redirect the old .php URLs to the new static pages.
+# No !-f guard: the old .php files may still exist on the server and must
+# never be served. (forms/contact.php is unaffected — this only matches
+# root-level page names.)
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(index|about|services|products|team|portfolio|contact|faq|price|sitemap|b2b-development|b2c-development|custom-website|professional-website|cms|ecommerce|mobile-apps|mobile-friendly|mobile-ui|test-automation|manual-testing|performance-testing|software-validation|load-testing|tools-expertise|seo|web-api)\.php$ /$1.html [R=301,L]
 
 # Removed pages (blog and old-template demo pages): send old URLs to the
