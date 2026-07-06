@@ -1,0 +1,89 @@
+---
+import ThemeLayout from '../layouts/ThemeLayout.astro';
+
+const groups = [
+  {
+    title: 'Company',
+    links: [
+      ['index.html', 'Home'],
+      ['about.html', 'About Us'],
+      ['team.html', 'Team'],
+      ['contact.html', 'Contact'],
+    ],
+  },
+  {
+    title: 'Services',
+    links: [
+      ['services.html', 'Our Services'],
+      ['cms.html', 'Content Management System'],
+      ['ecommerce.html', 'Ecommerce Solutions'],
+      ['seo.html', 'Search Engine Optimization'],
+      ['web-api.html', 'Web API Development'],
+      ['products.html', 'Products'],
+      ['price.html', 'Pricing'],
+    ],
+  },
+  {
+    title: 'Web Application Development',
+    links: [
+      ['b2b-development.html', 'B2B Development Services'],
+      ['b2c-development.html', 'B2C Development Services'],
+      ['custom-website.html', 'Custom Website Development'],
+      ['professional-website.html', 'Professional Website Development'],
+    ],
+  },
+  {
+    title: 'Mobile Application Development',
+    links: [
+      ['mobile-apps.html', 'Mobile Apps Development'],
+      ['mobile-friendly.html', 'Mobile Friendly Websites'],
+      ['mobile-ui.html', 'Mobile UI Development'],
+    ],
+  },
+  {
+    title: 'QA & Testing Services',
+    links: [
+      ['test-automation.html', 'Test Automation'],
+      ['manual-testing.html', 'Manual Testing'],
+      ['performance-testing.html', 'Performance Testing'],
+      ['software-validation.html', 'Software Validation'],
+      ['load-testing.html', 'Load Testing'],
+      ['tools-expertise.html', 'Tools Expertise'],
+    ],
+  },
+  {
+    title: 'More',
+    links: [
+      ['portfolio.html', 'Portfolio'],
+      ['faq.html', 'FAQ'],
+    ],
+  },
+];
+---
+<ThemeLayout page="sitemap" heading="Sitemap">
+
+  <section class="inner-page padd-section">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title text-center">
+        <h2>Sitemap</h2>
+        <p class="separator">Every page on this site, in one place.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        {groups.map((g) => (
+          <div class="col-md-4 col-lg-3">
+            <div class="list-menu">
+              <h4>{g.title}</h4>
+              <ul class="list-unstyled">
+                {g.links.map(([href, label]) => (
+                  <li><a href={href}>{label}</a></li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</ThemeLayout>

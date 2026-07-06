@@ -1,0 +1,598 @@
+---
+// Home page rebuilt on the eStartup theme from https://rayinfos.com/proj/ray/
+// (assets mirrored under public/assets/). Sections: hero, get-started,
+// about-us, features ("Amazing Features"), latest technologies, contact.
+import ServicesMenu from '../components/ServicesMenu.astro';
+const year = new Date().getFullYear();
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Rayinfos Technologies</title>
+  <meta name="description" content=" Rayinfos Technology, Open source company, Chennai, Medavakkam, siruseri, Tambaram, Low cost, web development company, website development company in Chennai, responsive website development, PHP development, WordPress customisation">
+  <meta name="keywords" content="Rayinfos Technology, Open source company, Chennai, Medavakkam, siruseri, Tambaram, Low cost, web development company, website development company in Chennai, responsive website development, PHP development, WordPress customisation">
+  <meta name="author" content="Rayinfos Technology">
+
+  <!-- Favicons -->
+  <link href="images/favicon.ico" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/vendor/modal-video/css/modal-video.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File (eStartup - BootstrapMade) -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=UA-12624119-1"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-12624119-1');
+  </script>
+</head>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <a href="index.html"><img src="assets/img/logo.png" alt="Rayinfos Technologies" title="Rayinfos Technologies" /></a>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="index.html">Home</a></li>
+          <li><a href="#about-us">About</a></li>
+          <li class="menu-has-children"><a href="services.html">Services</a>
+            <ServicesMenu />
+          </li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+
+      <ol class="carousel-indicators">
+        <li data-target="#heroCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#heroCarousel" data-slide-to="1"></li>
+        <li data-target="#heroCarousel" data-slide-to="2"></li>
+        <li data-target="#heroCarousel" data-slide-to="3"></li>
+        <li data-target="#heroCarousel" data-slide-to="4"></li>
+      </ol>
+
+      <div class="carousel-inner">
+
+        <div class="carousel-item active" style="background-image:url('images/slide-1.jpg')">
+          <div class="hero-container">
+            <h1>Welcome to Rayinfos Technologies</h1>
+            <h2>A complete web development company from start to finish</h2>
+            <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
+            <div class="btns">
+              <a href="services.html"><i class="fa fa-code fa-3x"></i><span>Web Dev</span></a>
+              <a href="mobile-apps.html"><i class="fa fa-mobile fa-3x"></i><span>Mobile</span></a>
+              <a href="test-automation.html"><i class="fa fa-cogs fa-3x"></i><span>QA Testing</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item" style="background-image:url('images/slide-2.jpg')">
+          <div class="hero-container">
+            <h1>Mobile Application Development</h1>
+            <h2>Native iOS, Android &amp; Windows apps for every business need</h2>
+            <a href="mobile-apps.html" class="btn-get-started">Explore Mobile</a>
+            <div class="btns">
+              <a href="mobile-apps.html"><i class="fa fa-android fa-3x"></i><span>Android</span></a>
+              <a href="mobile-apps.html"><i class="fa fa-apple fa-3x"></i><span>iOS</span></a>
+              <a href="mobile-ui.html"><i class="fa fa-paint-brush fa-3x"></i><span>Mobile UI</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item" style="background-image:url('images/slide-3.jpg')">
+          <div class="hero-container">
+            <h1>QA &amp; Software Testing</h1>
+            <h2>Automated testing, performance engineering &amp; software validation</h2>
+            <a href="test-automation.html" class="btn-get-started">Explore QA</a>
+            <div class="btns">
+              <a href="test-automation.html"><i class="fa fa-cogs fa-3x"></i><span>Automation</span></a>
+              <a href="manual-testing.html"><i class="fa fa-check-circle fa-3x"></i><span>Manual</span></a>
+              <a href="performance-testing.html"><i class="fa fa-tachometer fa-3x"></i><span>Performance</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item" style="background-image:url('images/slide-4.jpg')">
+          <div class="hero-container">
+            <h1>Ecommerce Solutions</h1>
+            <h2>B2B &amp; B2C online stores with full inventory management</h2>
+            <a href="ecommerce.html" class="btn-get-started">Explore Ecommerce</a>
+            <div class="btns">
+              <a href="ecommerce.html"><i class="fa fa-shopping-cart fa-3x"></i><span>Ecommerce</span></a>
+              <a href="b2b-development.html"><i class="fa fa-briefcase fa-3x"></i><span>B2B</span></a>
+              <a href="b2c-development.html"><i class="fa fa-users fa-3x"></i><span>B2C</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item" style="background-image:url('images/bg1.jpg')">
+          <div class="hero-container">
+            <h1>SEO &amp; Digital Marketing</h1>
+            <h2>Drive traffic and grow your online visibility with proven strategies</h2>
+            <a href="seo.html" class="btn-get-started">Explore SEO</a>
+            <div class="btns">
+              <a href="seo.html"><i class="fa fa-search fa-3x"></i><span>SEO</span></a>
+              <a href="web-api.html"><i class="fa fa-code fa-3x"></i><span>Web API</span></a>
+              <a href="cms.html"><i class="fa fa-edit fa-3x"></i><span>CMS</span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+        <span class="hero-nav-btn"><i class="fa fa-chevron-left"></i></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+        <span class="hero-nav-btn"><i class="fa fa-chevron-right"></i></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+
+          <h2>Complete Web &amp; Mobile Development Services</h2>
+          <p class="separator">From custom websites and mobile apps to ecommerce, CMS, SEO and QA testing — Rayinfos Technologies delivers end-to-end digital solutions for businesses of every size.</p>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-block">
+
+              <img src="assets/img/svg/code.svg" alt="Web Development" class="img-fluid">
+              <h4>Web Application Development</h4>
+              <p>Corporate websites, B2B &amp; B2C portals, custom web apps, ecommerce stores and professional website development from scratch.</p>
+              <a href="services.html">read more</a>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-block">
+
+              <img src="assets/img/svg/cloud-computing.svg" alt="Mobile Development" class="img-fluid">
+              <h4>Mobile App Development</h4>
+              <p>Native iOS, Android and Windows mobile apps — from GPS-based apps and shopping to CRM and workforce management solutions.</p>
+              <a href="mobile-apps.html">read more</a>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-block">
+
+              <img src="assets/img/svg/vector.svg" alt="QA Testing" class="img-fluid">
+              <h4>QA &amp; Software Testing</h4>
+              <p>Automated and manual testing, performance engineering, load testing, software validation and tools expertise across all platforms.</p>
+              <a href="test-automation.html">read more</a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End Get Started Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us padd-section">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+
+          <div class="col-md-5 col-lg-3">
+            <img src="images/ipad.png" alt="Web Development Services" data-aos="zoom-in" data-aos-delay="100" style="max-width:100%;">
+          </div>
+
+          <div class="col-md-7 col-lg-5">
+            <div class="about-content" data-aos="fade-left" data-aos-delay="100">
+
+              <h2><span>What</span> we offer</h2>
+
+              <ul class="list-unstyled">
+                <li><i class="fa fa-angle-right"></i>Web Application Development</li>
+                <li><i class="fa fa-angle-right"></i>Mobile Apps (iOS, Android, Windows)</li>
+                <li><i class="fa fa-angle-right"></i>Content Management Systems</li>
+                <li><i class="fa fa-angle-right"></i>Ecommerce Solutions</li>
+                <li><i class="fa fa-angle-right"></i>B2B &amp; B2C Development</li>
+                <li><i class="fa fa-angle-right"></i>Search Engine Optimisation</li>
+                <li><i class="fa fa-angle-right"></i>QA &amp; Software Testing</li>
+                <li><i class="fa fa-angle-right"></i>Web API Development</li>
+                <li><i class="fa fa-angle-right"></i>Domain Registration &amp; Hosting</li>
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>Our Services</h2>
+          <p class="separator">Everything your business needs to succeed online — from design to deployment.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <a href="custom-website.html"><img src="assets/img/svg/paint-palette.svg" alt="Custom Website Design" class="img-fluid"></a>
+              <h4><a href="custom-website.html">Custom Website Design</a></h4>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <a href="professional-website.html"><img src="assets/img/svg/code.svg" alt="Web Application Development" class="img-fluid"></a>
+              <h4><a href="professional-website.html">Web App Development</a></h4>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <a href="cms.html"><img src="assets/img/svg/design-tool.svg" alt="Content Management System" class="img-fluid"></a>
+              <h4><a href="cms.html">CMS Solutions</a></h4>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <a href="ecommerce.html"><img src="assets/img/svg/pixel.svg" alt="Ecommerce Solutions" class="img-fluid"></a>
+              <h4><a href="ecommerce.html">Ecommerce Solutions</a></h4>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <a href="mobile-apps.html"><img src="assets/img/svg/cloud-computing.svg" alt="Mobile App Development" class="img-fluid"></a>
+              <h4><a href="mobile-apps.html">Mobile App Development</a></h4>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <a href="seo.html"><img src="assets/img/svg/planet.svg" alt="SEO Optimisation" class="img-fluid"></a>
+              <h4><a href="seo.html">SEO &amp; Marketing</a></h4>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <a href="b2b-development.html"><img src="assets/img/svg/asteroid.svg" alt="B2B and B2C Development" class="img-fluid"></a>
+              <h4><a href="b2b-development.html">B2B &amp; B2C Portals</a></h4>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <a href="test-automation.html"><img src="assets/img/svg/vector.svg" alt="QA and Software Testing" class="img-fluid"></a>
+              <h4><a href="test-automation.html">QA &amp; Testing</a></h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Latest Technologies Section ======= -->
+    <section id="latest-tech" class="padd-section text-center">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>Latest Technologies.</h2>
+          <p class="separator">The up-to-date stack we build and test with.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-md-6 col-lg-3">
+            <div class="tech-block">
+              <div class="tech-block-icon"><i class="fa fa-server"></i></div>
+              <h4>Backend</h4>
+              <ul class="list-unstyled">
+                <li>PHP 8.4 &middot; Laravel 12</li>
+                <li>Node.js 22 LTS</li>
+                <li>REST &middot; GraphQL APIs</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="tech-block">
+              <div class="tech-block-icon"><i class="fa fa-desktop"></i></div>
+              <h4>Frontend &amp; CMS</h4>
+              <ul class="list-unstyled">
+                <li>React 19 &middot; Next.js 15</li>
+                <li>Bootstrap 5 &middot; Tailwind CSS 4</li>
+                <li>WordPress 6.8 &middot; Drupal 11</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="tech-block">
+              <div class="tech-block-icon"><i class="fa fa-mobile"></i></div>
+              <h4>Mobile &amp; Cloud</h4>
+              <ul class="list-unstyled">
+                <li>Flutter 3 &middot; React Native</li>
+                <li>Progressive Web Apps</li>
+                <li>AWS &middot; Docker &middot; CI/CD</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="tech-block">
+              <div class="tech-block-icon"><i class="fa fa-database"></i></div>
+              <h4>Data &amp; QA</h4>
+              <ul class="list-unstyled">
+                <li>MySQL 8.4 &middot; MongoDB 8</li>
+                <li>Selenium 4 &middot; Playwright</li>
+                <li>JMeter &middot; Postman</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technology logo strip -->
+        <div class="row justify-content-center mt-2 tech-logos" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-auto tech-logo-item">
+            <i class="fa fa-html5"></i>
+            <span>HTML5</span>
+          </div>
+          <div class="col-auto tech-logo-item">
+            <i class="fa fa-css3"></i>
+            <span>CSS3</span>
+          </div>
+          <div class="col-auto tech-logo-item">
+            <i class="fa fa-wordpress"></i>
+            <span>WordPress</span>
+          </div>
+          <div class="col-auto tech-logo-item">
+            <i class="fa fa-drupal"></i>
+            <span>Drupal</span>
+          </div>
+          <div class="col-auto tech-logo-item">
+            <i class="fa fa-joomla"></i>
+            <span>Joomla</span>
+          </div>
+          <div class="col-auto tech-logo-item">
+            <i class="fa fa-android"></i>
+            <span>Android</span>
+          </div>
+          <div class="col-auto tech-logo-item">
+            <i class="fa fa-apple"></i>
+            <span>iOS</span>
+          </div>
+          <div class="col-auto tech-logo-item">
+            <i class="fa fa-windows"></i>
+            <span>Windows</span>
+          </div>
+          <div class="col-auto tech-logo-item">
+            <i class="fa fa-linux"></i>
+            <span>Linux</span>
+          </div>
+          <div class="col-auto tech-logo-item">
+            <i class="fa fa-github"></i>
+            <span>GitHub</span>
+          </div>
+          <div class="col-auto tech-logo-item">
+            <i class="fa fa-database"></i>
+            <span>MySQL</span>
+          </div>
+          <div class="col-auto tech-logo-item">
+            <i class="fa fa-cloud"></i>
+            <span>AWS</span>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Latest Technologies Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>Contact</h2>
+          <p class="separator">Tell us about your project — we will get back to you soon.</p>
+        </div>
+
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-3 col-md-4">
+
+            <div class="info">
+              <div>
+                <i class="fa fa-map-marker"></i>
+                <p>Plot No: 1753, TNHB Colony, Sithalapakkam,<br>Chennai, Tamil Nadu 600126, India</p>
+              </div>
+
+              <div class="email">
+                <i class="fa fa-envelope"></i>
+                <p>info@rayinfos.com</p>
+              </div>
+
+              <div>
+                <i class="fa fa-phone"></i>
+                <p>+91 9150405613</p>
+              </div>
+
+              <div>
+                <i class="fa fa-map-marker"></i>
+                <p>1500, Sparkman Dr Nw, Suite #19C,<br>Huntsville, Alabama 35816, USA</p>
+              </div>
+
+              <div>
+                <i class="fa fa-phone"></i>
+                <p>+1 (256) 348 6920</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 col-md-8">
+            <div class="form">
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validate"></div>
+                </div>
+                <div class="mb-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div class="text-center"><button type="submit">Send Message</button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-4">
+          <div class="footer-logo">
+
+            <a class="navbar-brand" href="index.html">Rayinfos Technologies</a>
+            <p>A low cost web development company in Chennai offering responsive website development, PHP development and WordPress customisation.</p>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Company</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="about.html">About us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="team.html">Team</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Work</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="price.html">Pricing</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Support</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="copyrights">
+      <div class="container">
+        <p>&copy; {year} Rayinfos Technologies. All rights reserved.</p>
+        <div class="credits">
+          Designed by <a href="http://rayinfos.com/">Rayinfos Technologies</a>
+        </div>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script is:inline src="assets/vendor/jquery/jquery.min.js"></script>
+  <script is:inline src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script is:inline src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script is:inline src="assets/vendor/php-email-form/validate.js"></script>
+  <script is:inline src="assets/vendor/modal-video/js/modal-video.min.js"></script>
+  <script is:inline src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script is:inline src="assets/vendor/superfish/superfish.min.js"></script>
+  <script is:inline src="assets/vendor/hoverIntent/hoverIntent.js"></script>
+  <script is:inline src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script is:inline src="assets/js/main.js"></script>
+
+</body>
+</html>

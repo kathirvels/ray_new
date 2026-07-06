@@ -1,0 +1,114 @@
+---
+import ThemeLayout from '../layouts/ThemeLayout.astro';
+
+const services = [
+  {
+    icon: 'planet.svg',
+    title: 'Personal and Blog',
+    text: 'Want to fly your Individuality? Or show your diverse aspects to others? Or share your knowledge, information, etc with your friends? Owning a homepage is cool and practical! So if you have any such thoughts, then what are you hesitating for? We will help you to present your best!',
+    link: 'professional-website.html',
+  },
+  {
+    icon: 'cloud-computing.svg',
+    title: 'Retail / Ecommerce',
+    text: 'Are you ready to start e-commerce to enjoy all the advantages brought by it? If you decide to get in, then what will you select? B2B or B2C? No matter which one you select, we can provide you with our top-quality e-commerce website design service.',
+    link: 'ecommerce.html',
+  },
+  {
+    icon: 'asteroid.svg',
+    title: 'Dating / Social',
+    text: 'How romantic love is, and how precious friendship is! If you want a professional dating website, we can design it for you; apart from that, you can also ask us with a treasure chest of dating website in which many famous dating websites are available.',
+    link: 'b2c-development.html',
+  },
+  {
+    icon: 'code.svg',
+    title: 'Open Source',
+    text: 'Rayinfos can provide all kinds of open source customization and open source development for your project. Using open source platforms reduces your upfront costs and have zero licensing fees. Rayinfos can also assist with consultation on which open source platform to choose for your project.',
+    link: 'custom-website.html',
+  },
+  {
+    icon: 'cloud.svg',
+    title: 'Domain Registration',
+    text: 'Whatever business you are in, irrespective of the nature and size of your business, an Internet address or domain name is crucial for the future growth and development of your business. Imagine how often your company name and overall identity is referred to today and you will get some idea of the importance your domain name will have.',
+    link: 'price.html',
+  },
+  {
+    icon: 'cloud-computing.svg',
+    title: 'Web Hosting',
+    text: 'Your website must always be available, quick to access and supported by technical experts. Choosing the right website hosting company is vital to the success of your site — our hosting plans are backed by 99.9% uptime and round-the-clock support.',
+    link: 'price.html',
+  },
+  {
+    icon: 'design-tool.svg',
+    title: 'Web Development',
+    text: 'From e-Commerce to Social Networks, Rayinfos has created over 100 websites. This experience ensures that your web project can easily be handled by Rayinfos. PHP / mySQL are our main technologies.',
+    link: 'professional-website.html',
+  },
+  {
+    icon: 'pixel.svg',
+    title: 'CMS',
+    text: 'Rayinfos offers state of the art content management solutions for websites. Our CMS gives utmost liberty to users to maintain their own website through a user friendly, well designed panel that can be handled by any novice user on the web.',
+    link: 'cms.html',
+  },
+  {
+    icon: 'vector.svg',
+    title: 'Software Development',
+    text: 'Rayinfos leading offshore software development services serve businesses outsourcing development and programming to India. By a judicious blend of Business analysis & Management with the latest technology, Rayinfos develops state-of-the-art custom software & web based applications.',
+    link: 'b2b-development.html',
+  },
+  {
+    icon: 'paint-palette.svg',
+    title: 'Web Re-Engineering',
+    text: 'Our professional web experts, artists and designers allow small and medium businesses to extend their reach and market their products around the world through innovative new web design concepts. Speed and liveliness have become the new metric of innovation.',
+    link: 'custom-website.html',
+  },
+  {
+    icon: 'planet.svg',
+    title: 'Web 2.0',
+    text: 'Web 2.0 standards are being accepted across the globe to facilitate creativity, information sharing and collaboration among web users. Web 2.0 has led to new generation web oriented communities like social-networking sites, Wikis, Blogs, and folksonomies.',
+    link: 'web-api.html',
+  },
+  {
+    icon: 'paint-palette.svg',
+    title: 'Web Designing',
+    text: 'Rayinfos is primarily a Web Design Company — experts in Website Designing, Portal Development, Web Re-designing and Corporate Branding, with a dedicated team of web designers, creative artists, web developers and web marketing professionals to make your web site attractive as well as content rich.',
+    link: 'custom-website.html',
+  },
+];
+---
+<ThemeLayout page="services" heading="Services">
+
+  <section class="inner-page padd-section">
+    <div class="container">
+      <div class="row align-items-center mb-5" data-aos="fade-up">
+        <div class="col-md-2 col-sm-12 text-center mb-4 mb-md-0">
+          <div class="svc-hero-icon">
+            <i class="fa fa-cogs"></i>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <h3>Everything Your Business Needs Online</h3>
+          <p>From personal websites and blogs to full-scale e-commerce platforms, custom web applications, mobile apps, CMS solutions, SEO, QA testing and web hosting — Rayinfos Technologies is your single partner from concept to launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="get-started" class="padd-section text-center" style="padding-top:0">
+    <div class="container">
+      <div class="row">
+        {services.map((s, i) => (
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay={100 + (i % 3) * 100}>
+            <div class="feature-block">
+              <img src={`assets/img/svg/${s.icon}`} alt="img" class="img-fluid">
+              <h4>{s.title}</h4>
+              <p>{s.text}</p>
+              <a href={s.link}>read more</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</ThemeLayout>

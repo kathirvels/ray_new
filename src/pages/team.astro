@@ -1,0 +1,64 @@
+---
+import ThemeLayout from '../layouts/ThemeLayout.astro';
+
+const members = [
+  {
+    img: 'images/183x171-img1.jpg',
+    name: 'Mr. Kathir',
+    role: 'CEO, Head of Operations',
+    email: 'kathir@rayinfos.com',
+    text: 'More than 14 years of experience in web application development; delivered more than 20 applications and 50+ websites.',
+  },
+  {
+    img: 'images/183x171-img3.jpg',
+    name: 'Mr. Veera',
+    role: 'CEO, Head of Operations',
+    email: 'veera@rayinfos.com',
+    text: 'More than 14 years of experience in web application development; delivered more than 10 applications and 40+ websites.',
+  },
+  {
+    img: 'images/183x171-img3.jpg',
+    name: 'Mr. Dravid',
+    role: 'Technical Head',
+    email: 'dravid@rayinfos.com',
+    text: 'More than 12 years of experience in web application development; delivered more than 10 applications and 30+ websites.',
+  },
+  {
+    img: 'images/183x171-img4.jpg',
+    name: 'Mr. Raja',
+    role: 'Technical Head',
+    email: 'raja@rayinfos.com',
+    text: 'More than 12 years of experience in web application development; delivered more than 10 applications and 30+ websites.',
+  },
+];
+---
+<ThemeLayout page="team" heading="Team">
+
+  <section id="team" class="padd-section text-center">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title text-center">
+        <h2>Rayinfos Team</h2>
+        <p class="separator">The people who design, build and ship your project.</p>
+      </div>
+
+      <div class="row">
+        {members.map((m, i) => (
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay={100 + i * 100}>
+            <div class="team-block bottom">
+              <img src={m.img} class="img-responsive" alt={m.name}>
+              <div class="team-content">
+                <ul class="list-unstyled">
+                  <li><a href={`mailto:${m.email}`}><i class="fa fa-envelope"></i></a></li>
+                </ul>
+                <span>{m.role}</span>
+                <h4>{m.name}</h4>
+              </div>
+            </div>
+            <p class="mt-3 text-left">{m.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</ThemeLayout>

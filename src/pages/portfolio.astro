@@ -1,0 +1,165 @@
+---
+import ThemeLayout from '../layouts/ThemeLayout.astro';
+
+// Categories carried over from the old site's portfolio filter.
+const categories = [
+  ['all', 'All'],
+  ['general', 'General'],
+  ['hospital', 'Hospital'],
+  ['trust', 'Trust'],
+];
+
+const projects = [
+  {
+    img: 'images/bet.jpg',
+    cats: 'general',
+    title: 'Best Email Tool',
+    text: 'Fast and flexible bulk email creator — the easy way to build and send a email for your business needs.',
+  },
+  {
+    img: 'images/ftc.jpg',
+    cats: 'hospital general',
+    title: 'Fly To Care',
+    text: "While we are a 'Medical tourism' firm, we are more about the 'medical' than the 'tourism'.",
+  },
+  {
+    img: 'images/fmf.jpg',
+    cats: 'general',
+    title: 'Find My Food',
+    text: 'Powerful, stylish and modern food (restaurant) finding portal which helps to select healthy food.',
+  },
+  {
+    img: 'images/sves.jpg',
+    cats: 'trust',
+    title: 'SVES Trust',
+    text: "We do not raise funds for ourselves. We help you to donate to those NGO's.",
+  },
+  {
+    img: 'images/osrk.jpg',
+    cats: 'trust',
+    title: 'Om Sri Raja Kubera Trust',
+    text: 'The Beauty Of Life Is To Give.',
+  },
+  {
+    img: 'images/amc.jpg',
+    cats: 'hospital',
+    title: 'Anuradha Maternity Centre',
+    text: '"Smile", "Service", "Satisfaction" — Dr. Anitha Parthasarathy MD (OB GYN).',
+  },
+];
+---
+<ThemeLayout page="portfolio" heading="Portfolio">
+
+  <section id="blog" class="padd-section text-center">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title text-center">
+        <h2>Our Work</h2>
+        <p class="separator">A selection of the websites and applications we have delivered.</p>
+      </div>
+
+      <ul class="portfolio-filter">
+        {categories.map(([slug, label]) => (
+          <li>
+            <button type="button" class={slug === 'all' ? 'active' : undefined} data-filter={slug}>{label}</button>
+          </li>
+        ))}
+      </ul>
+
+      <div class="owl-carousel owl-theme portfolio-carousel"></div>
+
+      <div class="portfolio-source" style="display:none">
+        {projects.map((p) => (
+          <div class="portfolio-item" data-category={p.cats}>
+            <div class="block-blog text-left">
+              <img src={p.img} alt={p.title}>
+              <div class="content-blog">
+                <h4>{p.title}</h4>
+                <p>{p.text}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .portfolio-filter {
+      list-style: none;
+      margin: 0 0 40px;
+      padding: 0;
+    }
+    .portfolio-filter li {
+      display: inline-block;
+      margin: 0 5px 10px;
+    }
+    .portfolio-filter button {
+      background: #fff;
+      border: 1px solid #8C1009;
+      border-radius: 25px;
+      color: #8C1009;
+      cursor: pointer;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 8px 26px;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+    .portfolio-filter button:hover,
+    .portfolio-filter button.active {
+      background: #8C1009;
+      color: #fff;
+    }
+    .portfolio-carousel .portfolio-item {
+      padding-bottom: 5px; /* keep the card shadow visible inside owl-stage */
+    }
+    .portfolio-carousel .block-blog img {
+      width: 100%;
+    }
+  </style>
+
+  <script is:inline>
+    // Runs on window load, after ThemeLayout's vendor scripts and main.js
+    // (which has already initialised .owl-carousel with its defaults).
+    window.addEventListener('load', function () {
+      var $ = window.jQuery;
+      var $carousel = $('.portfolio-carousel');
+      var $source = $('.portfolio-source .portfolio-item');
+      if (!$carousel.length || !$source.length) return;
+
+      var owlOptions = {
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        loop: true,
+        margin: 30,
+        dots: true,
+        responsive: {
+          0: { items: 1 },
+          768: { items: 2 },
+          992: { items: 3 }
+        }
+      };
+
+      function rebuild(filter) {
+        var $subset = $source.filter(function () {
+          if (filter === 'all') return true;
+          return (this.getAttribute('data-category') || '').split(' ').indexOf(filter) !== -1;
+        }).clone();
+        $carousel.trigger('destroy.owl.carousel');
+        $carousel.empty().append($subset);
+        $carousel.owlCarousel(owlOptions);
+      }
+
+      rebuild('all');
+
+      $('.portfolio-filter button').on('click', function () {
+        $('.portfolio-filter button').removeClass('active');
+        $(this).addClass('active');
+        rebuild($(this).attr('data-filter'));
+      });
+    });
+  </script>
+
+</ThemeLayout>

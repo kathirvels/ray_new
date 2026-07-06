@@ -1,0 +1,84 @@
+---
+import ThemeLayout from '../layouts/ThemeLayout.astro';
+
+const features = 'Website Statistics, Webmail, Forwarders, Auto Responders, Mail Filters, Control Panel, Pre Installed Third Party Software and 99.9% Uptime';
+const plans = [
+  {
+    name: 'Basic Plan',
+    price: '100',
+    items: [
+      ['50 MB', 'Web Space'],
+      ['10', 'POP3 Email Accounts'],
+      ['2', 'Subdomains'],
+      ['1', 'MySQL Database'],
+      ['1000 MB / Month', 'Bandwidth Limit'],
+    ],
+  },
+  {
+    name: 'Silver Plan',
+    price: '200',
+    items: [
+      ['100 MB', 'Web Space'],
+      ['25', 'POP3 Email Accounts'],
+      ['3', 'Subdomains'],
+      ['3', 'MySQL Databases'],
+      ['2000 MB / Month', 'Bandwidth Limit'],
+    ],
+  },
+  {
+    name: 'Gold Plan',
+    price: '300',
+    items: [
+      ['250 MB', 'Web Space'],
+      ['Unlimited', 'POP3 Email Accounts'],
+      ['5', 'Subdomains'],
+      ['5', 'MySQL Databases'],
+      ['3000 MB / Month', 'Bandwidth Limit'],
+    ],
+  },
+];
+---
+<ThemeLayout page="price" heading="Pricing">
+
+  <section class="inner-page padd-section" style="padding-bottom:0">
+    <div class="container">
+      <div class="row align-items-center mb-5" data-aos="fade-up">
+        <div class="col-md-2 col-sm-12 text-center mb-4 mb-md-0">
+          <div class="svc-hero-icon">
+            <i class="fa fa-tags"></i>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <h3>Affordable Hosting Plans for Every Business</h3>
+          <p>All Rayinfos hosting plans include website statistics, webmail, forwarders, auto responders, mail filters, control panel, pre-installed third-party software and 99.9% uptime — starting from just ₹100 per month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="padd-section text-center" style="padding-top:0">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        {plans.map((plan) => (
+          <div class="col-md-6 col-lg-4">
+            <div class="block-pricing">
+              <div class="table">
+                <h4>{plan.name}</h4>
+                <h2>&#8377;{plan.price}<small> / month</small></h2>
+                <ul class="list-unstyled">
+                  {plan.items.map(([value, label]) => (
+                    <li><b>{value}</b> {label}</li>
+                  ))}
+                </ul>
+                <div class="table_btn">
+                  <a href="contact.html" class="btn"><i class="fa fa-shopping-cart"></i> Sign Up</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</ThemeLayout>

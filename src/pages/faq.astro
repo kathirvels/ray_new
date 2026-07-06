@@ -1,0 +1,122 @@
+---
+import ThemeLayout from '../layouts/ThemeLayout.astro';
+
+const faqs = [
+  {
+    q: 'What services does Rayinfos Technologies provide?',
+    a: 'We are a complete web development company from start to finish: website design and development, e-commerce solutions, content management systems, custom software development, mobile-friendly websites, QA testing, SEO, domain registration and web hosting.',
+  },
+  {
+    q: 'How long does it take to build a website?',
+    a: 'A simple brochure website is typically delivered in 1–2 weeks. E-commerce sites, portals and custom web applications take longer depending on the features required — after our initial requirements gathering we give you a project plan with clear milestones and delivery dates.',
+  },
+  {
+    q: 'Can I update the website content myself?',
+    a: 'Yes. We build sites on user friendly content management systems (including WordPress and our own CMS) so any novice user can update pages, images and products without technical knowledge. We also offer webmaster services if you prefer us to handle updates for you.',
+  },
+  {
+    q: 'Do you provide domain registration and hosting?',
+    a: 'Yes. We register domains and offer hosting plans starting at ₹100 per month, all backed by 99.9% uptime, webmail, control panel access and pre-installed third-party software. See our Pricing page for details.',
+  },
+  {
+    q: 'Will my website work on mobile phones and tablets?',
+    a: 'All the websites we build are responsive — they adapt to phones, tablets and desktops. We can also retrofit responsive design onto an existing website through our web re-engineering service.',
+  },
+  {
+    q: 'How do I get a quote for my project?',
+    a: 'Use the contact form on our Contact page, email info@rayinfos.com or call +91 9150405613. Tell us briefly what you need and we will get back to you with an estimate, usually within one business day.',
+  },
+];
+---
+<ThemeLayout page="faq" heading="FAQ">
+
+  <section class="inner-page padd-section">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title text-center">
+        <h2>Frequently Asked Questions</h2>
+        <p class="separator">Answers to the questions we hear most often.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="accordion faq-accordion" id="faqAccordion">
+            {faqs.map((f, i) => (
+              <div class="card">
+                <div class="card-header" id={`faqHeading${i}`}>
+                  <h5 class="mb-0">
+                    <button class={`btn btn-link${i === 0 ? '' : ' collapsed'}`} type="button" data-toggle="collapse" data-target={`#faqCollapse${i}`} aria-expanded={i === 0 ? 'true' : 'false'} aria-controls={`faqCollapse${i}`}>
+                      {f.q}
+                    </button>
+                  </h5>
+                </div>
+                <div id={`faqCollapse${i}`} class={`collapse${i === 0 ? ' show' : ''}`} aria-labelledby={`faqHeading${i}`} data-parent="#faqAccordion">
+                  <div class="card-body text-left">
+                    {f.a}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-accordion .card {
+      border: none;
+      border-radius: 4px;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.19);
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+    .faq-accordion .card-header {
+      background: #fff;
+      border-bottom: none;
+      padding: 0;
+    }
+    .faq-accordion .card-header .btn {
+      color: #3c4857;
+      display: block;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 18px 50px 18px 20px;
+      position: relative;
+      text-align: left;
+      text-decoration: none;
+      white-space: normal;
+      width: 100%;
+    }
+    .faq-accordion .card-header .btn:hover,
+    .faq-accordion .card-header .btn:focus {
+      box-shadow: none;
+      color: #8C1009;
+      text-decoration: none;
+    }
+    .faq-accordion .card-header .btn[aria-expanded="true"] {
+      color: #8C1009;
+    }
+    .faq-accordion .card-header .btn::after {
+      color: #8C1009;
+      content: "\f107";
+      font-family: FontAwesome;
+      font-size: 18px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s;
+    }
+    .faq-accordion .card-header .btn[aria-expanded="true"]::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    .faq-accordion .card-body {
+      color: #626262;
+      font-size: 15px;
+      line-height: 1.7;
+      padding: 20px;
+    }
+  </style>
+
+</ThemeLayout>

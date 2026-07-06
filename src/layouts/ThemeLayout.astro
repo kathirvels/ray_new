@@ -1,0 +1,182 @@
+---
+// eStartup theme layout for inner pages (the home page in index.astro embeds
+// the same header/footer inline with in-page anchor nav). `page` drives nav
+// highlighting and the <title>; `heading` is the breadcrumbs-band title.
+import ServicesMenu from '../components/ServicesMenu.astro';
+interface Props {
+  page: string;
+  heading: string;
+}
+const { page, heading } = Astro.props;
+const title = `Rayinfos Technologies - ${heading}`;
+const year = new Date().getFullYear();
+const servicesGroup = ['services', 'products', 'price'];
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{title}</title>
+  <meta name="description" content=" Rayinfos Technology, Open source company, Chennai, Medavakkam, siruseri, Tambaram, Low cost, web development company, website development company in Chennai, responsive website development, PHP development, WordPress customisation">
+  <meta name="keywords" content="Rayinfos Technology, Open source company, Chennai, Medavakkam, siruseri, Tambaram, Low cost, web development company, website development company in Chennai, responsive website development, PHP development, WordPress customisation">
+  <meta name="author" content="Rayinfos Technology">
+
+  <!-- Favicons -->
+  <link href="images/favicon.ico" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/vendor/modal-video/css/modal-video.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File (eStartup - BootstrapMade) -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=UA-12624119-1"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-12624119-1');
+  </script>
+</head>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header header-scrolled">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <a href="index.html"><img src="assets/img/logo.png" alt="Rayinfos Technologies" title="Rayinfos Technologies" /></a>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li class={page === 'about' ? 'menu-active' : undefined}><a href="about.html">About</a></li>
+          <li class={`menu-has-children${servicesGroup.includes(page) ? ' menu-active' : ''}`}><a href="services.html">Services</a>
+            <ServicesMenu />
+          </li>
+          <li class={page === 'portfolio' ? 'menu-active' : undefined}><a href="portfolio.html">Portfolio</a></li>
+          <li class={page === 'team' ? 'menu-active' : undefined}><a href="team.html">Team</a></li>
+          <li class={page === 'faq' ? 'menu-active' : undefined}><a href="faq.html">FAQ</a></li>
+          <li class={page === 'contact' ? 'menu-active' : undefined}><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>{heading}</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>{heading}</li>
+        </ol>
+      </div>
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <main id="main">
+    <slot />
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-4">
+          <div class="footer-logo">
+
+            <a class="navbar-brand" href="index.html">Rayinfos Technologies</a>
+            <p>A low cost web development company in Chennai offering responsive website development, PHP development and WordPress customisation.</p>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Company</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="about.html">About us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="team.html">Team</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Work</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="price.html">Pricing</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Support</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="copyrights">
+      <div class="container">
+        <p>&copy; {year} Rayinfos Technologies. All rights reserved.</p>
+        <div class="credits">
+          Designed by <a href="http://rayinfos.com/">Rayinfos Technologies</a>
+        </div>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script is:inline src="assets/vendor/jquery/jquery.min.js"></script>
+  <script is:inline src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script is:inline src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script is:inline src="assets/vendor/php-email-form/validate.js"></script>
+  <script is:inline src="assets/vendor/modal-video/js/modal-video.min.js"></script>
+  <script is:inline src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script is:inline src="assets/vendor/superfish/superfish.min.js"></script>
+  <script is:inline src="assets/vendor/hoverIntent/hoverIntent.js"></script>
+  <script is:inline src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script is:inline src="assets/js/main.js"></script>
+
+</body>
+</html>
